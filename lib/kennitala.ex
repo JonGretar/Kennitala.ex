@@ -56,8 +56,7 @@ defmodule Kennitala do
   defp tokenize(kennitala) do
     kennitala
       |> String.split("")
-      |> Enum.reject(&(&1 in [""]))
-      |> Enum.reject(&(String.match?(&1, ~r/[^\d]/)))
+      |> Enum.filter(&(String.match?(&1, ~r/[\d]/)))
       |> Enum.map(&String.to_integer/1)
   end
 

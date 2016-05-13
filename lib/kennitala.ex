@@ -16,7 +16,7 @@ defmodule Kennitala do
   def valid?(_), do: false
 
   @doc ~S"""
-  Get the type of kennitala
+  Get the birthday from kennitala
 
     iex> Kennitala.get_birthdate("0102031129")
     {1903, 2, 1}
@@ -36,7 +36,7 @@ defmodule Kennitala do
 
 
   @doc ~S"""
-  Get the type of kennitala
+  Get the type of kennitala.
 
     iex> Kennitala.type("1111111119")
     :individual

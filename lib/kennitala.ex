@@ -8,7 +8,7 @@ defmodule Kennitala do
       iex> Kennitala.valid?("1111111119")
       true
   """
-  @spec valid?(String.t) :: Boolean.t
+  @spec valid?(String.t) :: boolean()
   def valid?(kennitala) when is_binary(kennitala), do: valid?(tokenize(kennitala))
   def valid?(kennitala) when is_list(kennitala) and length(kennitala) == 10 do
     kennitala |> validity
@@ -21,6 +21,7 @@ defmodule Kennitala do
       iex> Kennitala.get_birthdate("0102031129")
       {1903, 2, 1}
   """
+  @spec get_birthdate(String.t) :: {pos_integer(), pos_integer(), pos_integer()}
   def get_birthdate(kennitala) when is_binary(kennitala), do: get_birthdate(tokenize(kennitala))
   def get_birthdate([d1,d2,m1,m2,y1,y2,_,_,_,c] = kennitala) when d1 >= 4 do
     if valid?(kennitala) do
@@ -41,7 +42,7 @@ defmodule Kennitala do
       iex> Kennitala.type("1111111119")
       :individual
   """
-  @spec valid?(String.t) :: :individual | :corporate
+  @spec type(String.t) :: :individual | :corporate
   def type(kennitala) do
     tokenized = tokenize(kennitala)
     if (valid?(tokenized)) do

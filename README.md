@@ -1,6 +1,6 @@
-# Kennitala
+# Kennitala [![Build Status](https://travis-ci.org/JonGretar/Kennitala.ex.svg?branch=master)](https://travis-ci.org/JonGretar/Kennitala.ex) [![Coverage Status](https://coveralls.io/repos/github/JonGretar/Kennitala.ex/badge.svg?branch=master)](https://coveralls.io/github/JonGretar/Kennitala.ex?branch=master)
 
-**TODO: Add description**
+Elixir library for validating and handling the Icelandic Kennitala identity number.
 
 ## Installation
 
@@ -17,4 +17,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
         def application do
           [applications: [:kennitala]]
         end
-

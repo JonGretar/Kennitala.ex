@@ -5,7 +5,6 @@ defmodule KennitalaTest do
   test "validity" do
     assert Kennitala.valid?("3108962099") === true
     assert Kennitala.valid?("1111111119") === true
-    assert Kennitala.valid?("111111-1119") === true
     assert Kennitala.valid?("6503760649") === true
   end
 
@@ -14,6 +13,13 @@ defmodule KennitalaTest do
     assert Kennitala.valid?("Some funky shit") === false
     assert Kennitala.valid?("1709715049") === false
     assert Kennitala.valid?([:a, :b, :c]) === false
+  end
+
+  test "removal of non-numeric characters" do
+    assert Kennitala.valid?("111111-1119") === true
+    assert Kennitala.valid?("111111_1119") === true
+    assert Kennitala.valid?("111111 1119") === true
+    assert Kennitala.valid?(" 1111111119 ") === true
   end
 
   test "type checking" do

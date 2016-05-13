@@ -5,8 +5,8 @@ defmodule Kennitala do
   @doc ~S"""
   Check legality of kennitala
 
-    iex> Kennitala.valid?("1111111119")
-    true
+      iex> Kennitala.valid?("1111111119")
+      true
   """
   @spec valid?(String.t) :: Boolean.t
   def valid?(kennitala) when is_binary(kennitala), do: valid?(tokenize(kennitala))
@@ -18,8 +18,8 @@ defmodule Kennitala do
   @doc ~S"""
   Get the birthday from kennitala
 
-    iex> Kennitala.get_birthdate("0102031129")
-    {1903, 2, 1}
+      iex> Kennitala.get_birthdate("0102031129")
+      {1903, 2, 1}
   """
   def get_birthdate(kennitala) when is_binary(kennitala), do: get_birthdate(tokenize(kennitala))
   def get_birthdate([d1,d2,m1,m2,y1,y2,_,_,_,c] = kennitala) when d1 >= 4 do
@@ -38,8 +38,8 @@ defmodule Kennitala do
   @doc ~S"""
   Get the type of kennitala.
 
-    iex> Kennitala.type("1111111119")
-    :individual
+      iex> Kennitala.type("1111111119")
+      :individual
   """
   @spec valid?(String.t) :: :individual | :corporate
   def type(kennitala) do

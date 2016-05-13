@@ -24,7 +24,8 @@ defmodule KennitalaTest do
   test "birthday calculation" do
     assert Kennitala.get_birthdate("0101011159") === {1901, 1, 1}
     assert Kennitala.get_birthdate("3112991150") === {2099, 12, 31}
-    assert Kennitala.get_birthdate("6503760649") === {1976, 3, 25}
+    assert Kennitala.get_birthdate("6503760648") === {1876, 3, 25}
+    assert Kennitala.get_birthdate("6503760647") === {1776, 3, 25}
   end
 
 end

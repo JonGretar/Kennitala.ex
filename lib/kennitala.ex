@@ -1,5 +1,5 @@
 defmodule Kennitala do
-  @doc ~S"""
+  @moduledoc ~S"""
   Elixir library for validating and handling the Icelandic [Kennitala](https://en.wikipedia.org/wiki/Kennitala)
   national identity number.
 

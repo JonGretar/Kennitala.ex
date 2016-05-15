@@ -1,5 +1,8 @@
 # Kennitala [![Build Status](https://travis-ci.org/JonGretar/Kennitala.ex.svg?branch=master)](https://travis-ci.org/JonGretar/Kennitala.ex) [![Coverage Status](https://coveralls.io/repos/github/JonGretar/Kennitala.ex/badge.svg?branch=master)](https://coveralls.io/github/JonGretar/Kennitala.ex?branch=master)
 
+ * [Hex Package](https://hex.pm/packages/kennitala)
+ * [Hex Docs](https://hexdocs.pm/kennitala/api-reference.html)
+
 Elixir library for validating and handling the Icelandic [Kennitala](https://en.wikipedia.org/wiki/Kennitala) national identity number.
 
 Kennitala are 10 digit numbers.

@@ -9,10 +9,7 @@ defmodule Kennitala do
       true
   """
   @spec valid?(String.t) :: boolean()
-  def valid?(kennitala) when is_binary(kennitala), do: valid?(tokenize(kennitala))
-  def valid?(kennitala) when is_list(kennitala) and length(kennitala) == 10 do
-    kennitala |> validity
-  end
+  def valid?(kennitala) when is_binary(kennitala), do: kennitala |> validity
   def valid?(_), do: false
 
   @doc ~S"""
@@ -22,18 +19,15 @@ defmodule Kennitala do
       {1903, 2, 1}
   """
   @spec get_birthdate(String.t) :: {pos_integer(), pos_integer(), pos_integer()}
-  def get_birthdate(kennitala) when is_binary(kennitala), do: get_birthdate(tokenize(kennitala))
-  def get_birthdate([d1,d2,m1,m2,y1,y2,_,_,_,c] = kennitala) when d1 >= 4 do
-    if valid?(kennitala) do
-      {calc_date(y1, y2, c), calc_date(m1, m2), calc_date(d1 - 4, d2)}
+  def get_birthdate(kennitala) when is_binary(kennitala) do
+    case tokenize(kennitala) do
+      [d1,d2,m1,m2,y1,y2,_,_,_,c] when d1 >= 4 ->
+        {calc_date(y1, y2, c), calc_date(m1, m2), calc_date(d1 - 4, d2)}
+      [d1,d2,m1,m2,y1,y2,_,_,_,c] ->
+        {calc_date(y1, y2, c), calc_date(m1, m2), calc_date(d1, d2)}
     end
   end
-  def get_birthdate([d1,d2,m1,m2,y1,y2,_,_,_,c] = kennitala) do
-    if valid?(kennitala) do
-      {calc_date(y1, y2, c), calc_date(m1, m2), calc_date(d1, d2)}
-    end
-  end
-  def get_birthdate(kennitala), do: nil
+  def get_birthdate(kennitala), do: :invalid
 
 
   @doc ~S"""
@@ -45,7 +39,7 @@ defmodule Kennitala do
   @spec type(String.t) :: :individual | :corporate
   def type(kennitala) do
     tokenized = tokenize(kennitala)
-    if (valid?(tokenized)) do
+    if (validity(tokenized)) do
       case hd(tokenized) do
         x when x >= 4 -> :corporate
         _ -> :individual
@@ -60,6 +54,7 @@ defmodule Kennitala do
       |> Enum.map(&String.to_integer/1)
   end
 
+  defp validity(kennitala) when is_binary(kennitala), do: validity(tokenize(kennitala))
   defp validity([_,_,_,_,_,_,_,_,vartala,_]=kennitala) do
     vartala == calc_vartala(kennitala)
   end

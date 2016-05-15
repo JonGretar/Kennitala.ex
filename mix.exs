@@ -4,7 +4,7 @@ defmodule Kennitala.Mixfile do
   def project do
     [
       app: :kennitala,
-      version: "0.0.1",
+      version: "1.0.0",
       elixir: "~> 1.1",
       description: description,
       package: package,
@@ -42,7 +42,8 @@ defmodule Kennitala.Mixfile do
       maintainers: ["Jón Grétar Borgþórsson"],
       licenses: ["MIT"],
       links: %{
-        "GitHub": "https://github.com/JonGretar/Kennitala.ex"
+        "GitHub": "https://github.com/JonGretar/Kennitala.ex",
+        "Kennitala on Wikipedia": "https://en.wikipedia.org/wiki/Kennitala"
       }
     ]
   end

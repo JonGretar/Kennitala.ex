@@ -33,7 +33,7 @@ Using [Hex](https://hex.pm), the package can be installed as:
   1. Add kennitala to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:kennitala, "~> 0.0.1"}]
+          [{:kennitala, "~> 1.0.0"}]
         end
 
 

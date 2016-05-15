@@ -2,6 +2,11 @@ defmodule Kennitala do
 
   @magic [3, 2, 7, 6, 5, 4, 3, 2];
 
+  @typedoc """
+  Tuple with {Year, Month, Day}
+  """
+  @type date_tuple :: {pos_integer(), pos_integer(), pos_integer()}
+
   @doc ~S"""
   Check legality of kennitala
 
@@ -18,7 +23,7 @@ defmodule Kennitala do
       iex> Kennitala.get_birthdate("0102031129")
       {1903, 2, 1}
   """
-  @spec get_birthdate(String.t) :: {pos_integer(), pos_integer(), pos_integer()}
+  @spec get_birthdate(String.t) :: date_tuple
   def get_birthdate(kennitala) when is_binary(kennitala) do
     case tokenize(kennitala) do
       [d1,d2,m1,m2,y1,y2,_,_,_,c] when d1 >= 4 ->

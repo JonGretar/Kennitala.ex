@@ -1,7 +1,10 @@
-# Kennitala [![Build Status](https://travis-ci.org/JonGretar/Kennitala.ex.svg?branch=master)](https://travis-ci.org/JonGretar/Kennitala.ex) [![Coverage Status](https://coveralls.io/repos/github/JonGretar/Kennitala.ex/badge.svg?branch=master)](https://coveralls.io/github/JonGretar/Kennitala.ex?branch=master)
+# Kennitala
 
- * [Hex Package](https://hex.pm/packages/kennitala)
- * [Hex Docs](https://hexdocs.pm/kennitala/api-reference.html)
+[![Hexdocs.pm](https://img.shields.io/badge/Online-Documentation-lightgrey.svg)](https://hexdocs.pm/kennitala/api-reference.html)
+[![Hex.pm](https://img.shields.io/hexpm/v/kennitala.svg?maxAge=2592000)](https://hex.pm/packages/kennitala)
+[![Build Status](https://travis-ci.org/JonGretar/Kennitala.ex.svg?branch=master)](https://travis-ci.org/JonGretar/Kennitala.ex)
+[![Coverage Status](https://coveralls.io/repos/github/JonGretar/Kennitala.ex/badge.svg?branch=master)](https://coveralls.io/github/JonGretar/Kennitala.ex?branch=master)
+
 
 Elixir library for validating and handling the Icelandic [Kennitala](https://en.wikipedia.org/wiki/Kennitala) national identity number.
 
